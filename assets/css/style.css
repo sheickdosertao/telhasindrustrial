@@ -1,0 +1,185 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh;
+}
+
+/* Contêiner principal do checkout */
+#checkout-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Largura máxima para desktops */
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+h1 {
+    color: #009ee3; /* Azul Mercado Pago */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo para o resumo do carrinho */
+#checkout {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    background-color: #fcfcfc;
+}
+
+#checkout div {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+#checkout div:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #007bb6; /* Azul um pouco mais escuro */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #009ee3; /* Linha destacada para o total */
+}
+
+/* Estilo para o contêiner do botão do Mercado Pago (onde o Brick será renderizado) */
+#mercadopago-btn {
+    width: 100%;
+    /* O Mercado Pago irá preencher este div, então não precisa de muita estilização aqui */
+    /* Apenas garanta que ele tenha espaço suficiente */
+    min-height: 50px; /* Uma altura mínima para visualização */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Adicione um espaçamento superior se desejar separá-lo do resumo */
+    margin-top: 20px;
+}
+
+/* Estilos para itens individuais no resumo do checkout */
+.checkout-item-resumo {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.checkout-item-resumo:last-child {
+    border-bottom: none;
+}
+
+.checkout-img-resumo {
+    width: 60px; /* <--- ISSO VAI CONTROLAR O TAMANHO DA IMAGEM */
+    height: 60px; /* <--- ISSO VAI CONTROLAR O TAMANHO DA IMAGEM */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    margin-right: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+/* ... restante do CSS para checkout ... */
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    #checkout-container {
+        padding: 20px;
+        box-shadow: none; /* Remove a sombra em telas menores */
+    }
+    #checkout div {
+        font-size: 1em;
+    }
+    #checkout div:last-child {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #checkout div {
+        flex-direction: column; /* Empilha itens em telas muito pequenas */
+        align-items: flex-start;
+    }
+    #checkout div span:last-child {
+        margin-top: 5px;
+    }
+}
+
+/* --- Estilos para o Formulário de Dados do Pagador --- */
+
+.payer-details-form {
+    background-color: #f9f9f9; /* Um cinza claro para o fundo da seção */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 25px; /* Margem abaixo do formulário para separar do botão de pagamento */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.payer-details-form h2 {
+    font-size: 1.5em; /* Tamanho do título */
+    color: #333; /* Cor do texto do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    text-align: center; /* Centraliza o título */
+    border-bottom: 1px solid #eee; /* Linha de separação abaixo do título */
+    padding-bottom: 10px; /* Espaçamento entre o título e a linha */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaçamento entre cada grupo de input (label + input) */
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar a largura total e o input ir para a linha de baixo */
+    margin-bottom: 5px; /* Espaçamento entre o label e o input */
+    font-weight: bold; /* Deixa o texto do label em negrito */
+    color: #555; /* Cor do texto do label */
+}
+
+/* Estilos para os inputs de texto e email */
+.form-control {
+    width: 100%; /* Faz o input ocupar 100% da largura do seu contêiner pai */
+    padding: 10px 12px; /* Espaçamento interno do input */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 1em; /* Tamanho da fonte */
+    line-height: 1.5; /* Altura da linha */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição suave para foco */
+}
+
+/* Estilos para quando o input está focado (clicado) */
+.form-control:focus {
+    border-color: #80bdff; /* Borda azul ao focar (similar ao Bootstrap padrão) */
+    outline: 0; /* Remove o outline padrão do navegador */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra suave ao focar */
+}
+
+/* Estilos para o placeholder (texto de exemplo dentro do input) */
+.form-control::placeholder {
+    color: #999; /* Cor do texto do placeholder */
+    opacity: 1; /* Garante que o placeholder seja visível em todos os navegadores */
+}
+
+/* Ajustes responsivos básicos */
+@media (max-width: 768px) {
+    .payer-details-form {
+        padding: 15px; /* Menor padding em telas menores */
+    }
+    .payer-details-form h2 {
+        font-size: 1.3em; /* Menor tamanho de título */
+    }
+}

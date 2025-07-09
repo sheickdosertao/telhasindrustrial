@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="assets/img/logoindustrialtelhas.png" rel="icon">
+     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <title>Finalizar Pedido - Industrial Telhas</title>
+
+     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="checkout-container">
+        <h1>Seu Pedido</h1>
+        
+        <div id="checkout">Carregando detalhes do carrinho...</div>
+        <div class="payer-details-form">
+            <h2>Dados do Pagador</h2>
+            <div class="form-group">
+                <label for="payer-email">Email:</label>
+                <input type="email" id="payer-email" class="form-control" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="payer-name">Nome:</label>
+                <input type="text" id="payer-name" class="form-control" placeholder="Seu Nome" required>
+            </div>
+            <div class="form-group">
+                <label for="payer-surname">Sobrenome:</label>
+                <input type="text" id="payer-surname" class="form-control" placeholder="Seu Sobrenome" required>
+            </div>
+        </div>
+        
+        <button id="btn-finalizar-compra" class="btn btn-primary mt-3">Finalizar Compra</button>
+        <div id="mercadopago-btn" class="mt-3"></div>
+        
+    </div>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="assets/js/carrinho.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>
