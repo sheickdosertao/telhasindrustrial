@@ -940,6 +940,12 @@ h6 {
   color: red;
 }
 
+#promocao1 {
+
+  font-size: 45px;
+  font-weight: 900;
+}
+
 @keyframes animate-preloader {
   0% {
     transform: rotate(0deg);
