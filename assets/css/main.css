@@ -934,6 +934,12 @@ h6 {
   animation: animate-preloader 1.5s linear infinite;
 }
 
+.pix {
+  font-size: 22px;
+  font-weight: 700;
+  color: red;
+}
+
 @keyframes animate-preloader {
   0% {
     transform: rotate(0deg);
