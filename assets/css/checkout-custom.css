@@ -1,0 +1,258 @@
+/* --- Estilos Específicos para a Página de Checkout --- */
+
+#checkout-container {
+    max-width: 800px; /* Limita a largura do contêiner principal */
+    margin: 40px auto; /* Centraliza na página */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#checkout-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+/* Estilos para o resumo do carrinho */
+#checkout {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.checkout-item-resumo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #dee2e6; /* Linha tracejada entre itens */
+}
+
+.checkout-item-resumo:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.checkout-img-resumo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    border: 1px solid #eee;
+}
+
+.checkout-info-resumo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-info-resumo span:first-child {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.checkout-info-resumo span:last-child {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.checkout-total-item-resumo {
+    font-weight: bold;
+    color: #007bff; /* Cor primária do Bootstrap */
+    font-size: 1.1em;
+    margin-left: 15px;
+}
+
+.checkout-total-geral-resumo {
+    text-align: right;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #28a745; /* Cor de sucesso do Bootstrap */
+    padding-top: 15px;
+    border-top: 2px solid #e9ecef;
+}
+
+/* Estilos para os formulários de dados do pagador e endereço */
+.payer-details-form,
+.address-details-form {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.payer-details-form h2,
+.address-details-form h2 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    display: block; /* Garante que ocupe a largura para a borda */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Estilo para inputs e textareas do formulário */
+.form-control { /* Classe do Bootstrap, estamos complementando */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Ajuste para inputs na mesma linha (Número e Complemento) */
+.form-group.d-flex {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os elementos flex */
+}
+
+.form-group.d-flex > div {
+    flex: 1; /* Faz com que as divs internas ocupem o espaço igualmente */
+}
+
+/* Estilo para o botão "Finalizar Compra" */
+#btn-finalizar-compra {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#btn-finalizar-compra:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Estilo para a mensagem do WhatsApp */
+.whatsapp-message {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Estilos para o contêiner do link do WhatsApp (já existente) */
+.whatsapp-link-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.whatsapp-link-container a {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: #25D366; /* Verde icônico do WhatsApp */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-link-container a:hover {
+    background-color: #1DA851;
+    transform: translateY(-2px);
+}
+
+.whatsapp-link-container a i.bi-whatsapp {
+    font-size: 1.4em;
+    margin-right: 10px;
+}
+
+/* Estilo para o container do Mercado Pago Brick */
+#mercadopago-btn {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#mercadopago-btn p {
+    color: #555;
+    font-weight: bold;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    #checkout-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    #checkout-container h1 {
+        font-size: 1.8em;
+    }
+
+    .payer-details-form h2,
+    .address-details-form h2 {
+        font-size: 1.5em;
+    }
+
+    .checkout-item-resumo {
+        flex-wrap: wrap; /* Quebra linha em telas pequenas */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .checkout-img-resumo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .checkout-info-resumo,
+    .checkout-total-item-resumo {
+        width: 100%; /* Ocupa toda a largura */
+        text-align: center;
+    }
+
+    .form-group.d-flex {
+        flex-direction: column; /* Coloca número e complemento um abaixo do outro */
+        gap: 0;
+    }
+
+    .form-group.d-flex > div {
+        flex: none;
+        width: 100%;
+        margin-right: 0;
+    }
+}

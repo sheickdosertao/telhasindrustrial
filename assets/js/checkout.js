@@ -45,16 +45,27 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log('Botão "Finalizar Compra" clicado.');
 
             // Agora, sim, verifica os campos de pagador
-            if (!payerEmailInput.value || !payerNameInput.value || !payerSurnameInput.value) {
-                document.getElementById('mercadopago-btn').innerHTML = `<p style="color: red;">Por favor, preencha todos os dados do pagador para continuar.</p>`;
-                console.log('Dados do pagador incompletos após clique. Não prosseguindo.');
-                return;
+           if (!payerEmail || !payerName || !payerSurname || !payerCpf ||
+        !addressCep || !addressStreet || !addressNumber || !addressNeighborhood || !addressCity || !addressState) {
+        document.getElementById('mercadopago-btn').innerHTML = `<p style="color: red;">Por favor, preencha todos os dados obrigatórios para continuar.</p>`;
+        console.log('Dados incompletos.');
+        return;
             }
     
 
     const payerEmail = payerEmailInput.value;
     const payerName = payerNameInput.value;
     const payerSurname = payerSurnameInput.value;
+     const payerCpf = document.getElementById('payer-cpf').value; // Novo
+
+    // Novos campos de endereço
+    const addressCep = document.getElementById('address-cep').value;
+    const addressStreet = document.getElementById('address-street').value;
+    const addressNumber = document.getElementById('address-number').value;
+    const addressComplement = document.getElementById('address-complement').value;
+    const addressNeighborhood = document.getElementById('address-neighborhood').value;
+    const addressCity = document.getElementById('address-city').value;
+    const addressState = document.getElementById('address-state').value;
 
     console.log('Dados do pagador preenchidos e válidos após clique:', payerEmail, payerName, payerSurname);
     
@@ -62,18 +73,27 @@ document.addEventListener('DOMContentLoaded', async () => {
      document.getElementById('mercadopago-btn').innerHTML = `<p>Processando pagamento...</p>`;
 
     // Chama backend para criar preferência Mercado Pago
-    try {
-                console.log('Iniciando requisição fetch para o backend.');
-                const response = await fetch('https://beckendindustrialtelhas.onrender.com/api/mercadopago-preferencia', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        items: cart,
-                        payerEmail: payerEmail,
-                        payerName: payerName,
-                        payerSurname: payerSurname,
-                    })
-                });
+  try {
+        const response = await fetch('https://beckendindustrialtelhas.onrender.com/api/mercadopago-preferencia', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                items: cart,
+                payerEmail: payerEmail,
+                payerName: payerName,
+                payerSurname: payerSurname,
+                payerCpf: payerCpf, // Adicionado
+                payerAddress: { // Objeto para o endereço
+                    cep: addressCep,
+                    street: addressStreet,
+                    number: addressNumber,
+                    complement: addressComplement,
+                    neighborhood: addressNeighborhood,
+                    city: addressCity,
+                    state: addressState
+                }
+            })
+        });
                 console.log('Requisição fetch enviada.');
 
                 if (!response.ok) {
