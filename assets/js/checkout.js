@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     
                     // --- 7. Inicializa e Renderiza o Mercado Pago Wallet Brick ---
                     // IMPORTANTE: Use a sua PUBLIC_KEY real do Mercado Pago aqui!
-                    const mp = new MercadoPago('APP_USR-e0b13799-5c13-413a-a2f2-195c732a147f', {
+                    const mp = new MercadoPago('APP_USR-1f48557b-5774-4404-b85c-20b00e32d800', {
                         locale: 'pt-BR'
                     });
 
